@@ -10,7 +10,7 @@ first the reports are mapped onto the full time slot grip table.
 The burst finding method consists of finding cumulative sum of consecutive values using a sliding window of a given length in slots.
 For that purpose a discrete, linear convolution with a sequence of ones (mask) of a given sliding window length is used (ref. ``np.convolve``).
 Afterwards the peaks with the height of at least the given burst size are located using the ``scipy.signal.find_peaks``
-which are the indices of the beginning of bursts in the full time slot grip table.
+which provide the indices of the beginning of bursts in the full time slot grip table as well as the bursts' sizes.
 
 The pattern finding method consists of converting the full time slot grip table into the 2d array with number of rows equal
 to the number of elements in the searched pattern and number of columns equal to
